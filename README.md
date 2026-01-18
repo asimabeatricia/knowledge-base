@@ -1,24 +1,24 @@
 # BPJS Ketenagakerjaan Knowledge Base with AI Chatbot
 
-Aplikasi **Knowledge Base** berbasis web yang dirancang untuk mengelola dan mendistribusikan panduan penggunaan aplikasi internal bagi karyawan BPJS Ketenagakerjaan. Proyek ini mengintegrasikan fitur manajemen konten (CRUD) dengan kecerdasan buatan (Chatbot) untuk meningkatkan efisiensi bantuan teknis.
+A web-based **Knowledge Base** application designed to manage and distribute internal application user manuals for BPJS Ketenagakerjaan employees. This project integrates Content Management features (CRUD) with Artificial Intelligence (Chatbot) to enhance technical support efficiency.
 
-## Fitur Utama
+## Key Features
 
-### Portal Admin (Management Side)
-* **CRUD User Manual**: Admin memiliki kendali penuh untuk Menambah (Create), Melihat (Read), Mengubah (Update), dan Menghapus (Delete) dokumen panduan.
-* **Content Management**: Pengelolaan dokumen panduan aplikasi yang terorganisir untuk memudahkan akses informasi.
+### Admin (Management Side)
+* **CRUD User Manual**: Admins have full control to Create, Read, Update, and Delete guidance documents.
+* **Content Management**: Organized document management system to ensure easy information retrieval for employees.
 
-### Fitur AI Chatbot (User Side)
-* **Automated Assistant**: Integrasi dengan **Google Dialogflow API** yang memungkinkan user bertanya secara alami mengenai panduan aplikasi.
-* **Real-time Interaction**: Respons chatbot yang cepat menggunakan AJAX/Fetch API untuk pengalaman pengguna yang mulus.
+### AI Chatbot Feature (User Side)
+* **Automated Assistant**: Integrated with **Google Dialogflow API**, allowing users to inquire about application manuals using Natural Language.
+* **Real-time Interaction**: Fast chatbot responses utilizing AJAX/Fetch API for a seamless and responsive user experience.
 
-## 💻 Tech Stack
+## Tech Stack
 * **Framework**: CodeIgniter 4 (PHP 8.1+)
 * **UI/UX**: Bootstrap 4 & JavaScript
 * **Database**: MySQL
 * **AI Engine**: Google Dialogflow (Natural Language Understanding)
 
-## 🔧 Instalasi & Konfigurasi
+## Instalasi & Konfigurasi
 
 1. **Clone & Install**:
    ```bash
@@ -26,9 +26,23 @@ Aplikasi **Knowledge Base** berbasis web yang dirancang untuk mengelola dan mend
    composer install
    
 2. **Environment Setup**
-    - Salin file env menjadi .env
-    - Atur database dan path kredensial Google Cloud : GOOGLE_APPLICATION_CREDENTIALS = "path/to/your/new-key.json"
+    * Copy the env file to .env
+    * Configure your database settings and Google Cloud credential path: GOOGLE_APPLICATION_CREDENTIALS = "path/to/your/service-account-key.json"
 
 3. **Database**:
-    Impor database ke MySQL dan sesuaikan pengaturan di .env
+    Import the database schema to MySQL and adjust the settings in your .env file
+    
+    
+    ## Preview
+    ![Admin](public/img/screenshoots/admin.jpeg)
+    ![User](public/img/screenshoots/chatbot.jpeg)
+
+
+## Disclaimer
+This project was developed as part of an **internship program at BPJS Ketenagakerjaan** and was subsequently extended as a **Final Capstone Project (Thesis)**. 
+
+Please note the following:
+* **Data Privacy**: All sensitive information, internal documents, and private credentials have been removed. This repository uses **dummy data** or publicly available information for demonstration purposes only.
+* **Non-Official**: This is a personal development version and is **not** the official production application of BPJS Ketenagakerjaan.
+* **Educational Purpose**: The primary goal of this repository is to demonstrate technical proficiency in PHP (CodeIgniter 4) and AI integration (Dialogflow).
    
