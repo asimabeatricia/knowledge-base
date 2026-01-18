@@ -20,9 +20,6 @@ class Chatbot extends BaseController
             $text = $this->request->getPost('message');
             $projectId = 'knowledge-base-453916';
 
-            // take credential JSON
-            putenv('GOOGLE_APPLICATION_CREDENTIALS=' . WRITEPATH . 'credentials' . DIRECTORY_SEPARATOR . 'dialogflow-key.json');
-
             $sessionId = uniqid();
             $languageCode = 'id';
 
@@ -48,16 +45,14 @@ class Chatbot extends BaseController
             ]);
 
             $body = json_decode($response->getBody(), true);
-            log_message('error', print_r($body, true));
             $reply = $body['queryResult']['fulfillmentText'] ?? 'Sorry, there is no answer.';
             $reply = nl2br($reply);
 
             return $this->response->setJSON(['reply' => $reply]);
         } catch (\Throwable $e) {
-            log_message('error', $e->getMessage());
+            log_message('error', 'Chatbot Error: ' . $e->getMessage());
             return $this->response->setStatusCode(500)->setJSON([
-                'error' => $e->getMessage(),
-                'trace' => $e->getTraceAsString()
+                'error' => $e->getMessage()
             ]);
         }
     }
